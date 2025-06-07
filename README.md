@@ -9,3 +9,6 @@
 
 ## Simple Programs by C
 https://github.com/pulpfreepress/c_bootcamp
+
+## Exceptions module example
+https://github.com/guillermocalvo/exceptions4c
