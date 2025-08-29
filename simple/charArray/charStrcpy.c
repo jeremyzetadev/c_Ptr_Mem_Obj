@@ -16,6 +16,19 @@ void PtrChar(){
     free(message);
 }
 
+void strcpytry(){
+    char s1_dest[] = "abcdef";
+    char s1_src[] = "xyz";
+    strcpy(s1_dest, s1_src);
+    printf("s1: %s\n", s1_dest);
+
+    char s4_src[] = "xyz";
+    char *s4_dest;
+    s4_dest = malloc(sizeof(char));
+    strcpy(s4_dest, s4_src);
+    printf("s4: %s\n", s4_dest);
+}
+
 void StrCpyTest(){
     // By array
     char s1_dest[] = "abcdef";

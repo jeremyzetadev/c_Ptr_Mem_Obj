@@ -11,7 +11,7 @@ typedef struct Stack {
 } Stack_t;
 
 Stack_t *Stack_new(size_t capacity){
-    Stack_t *s = malloc(sizeof(capacity));
+    Stack_t *s = malloc(sizeof(Stack_t));
     if (s==NULL) return NULL;
 
     s->count=0;
