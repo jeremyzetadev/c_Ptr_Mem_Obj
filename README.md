@@ -12,3 +12,8 @@ https://github.com/pulpfreepress/c_bootcamp
 
 ## Exceptions module example
 https://github.com/guillermocalvo/exceptions4c
+
+## Array Decay to Pointer and syntax
+<img width="1696" height="1076" alt="image" src="https://github.com/user-attachments/assets/a66b29a3-1952-43d8-ae16-f07fa3a3223a" />
+
+
