@@ -14,20 +14,6 @@ typedef struct Tok_{
     int column;
 } Tok_t;
 
-Tok_t **create_token_pointer_array2(Tok_t *tokens, size_t count){
-    Tok_t **token_pointers = malloc(sizeof(Tok_t*) * count);
-    if(token_pointers == NULL)
-        exit(1);
-
-    for(size_t i=0; i<count; i++){
-        Tok_t *pointer = malloc(sizeof(Tok_t*));
-        token_pointers[i] = pointer;
-        *pointer = tokens[i];
-    }
-    return token_pointers;
-}
-
-
 token_t** create_token_pointer_array(token_t* tokens, size_t count){
     token_t** token_pointers = malloc(sizeof(token_t*) * count);
     if(token_pointers == NULL)
