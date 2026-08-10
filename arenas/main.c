@@ -70,6 +70,21 @@ void arena_destroy(mem_arena *arena){
     free(arena);
 }
 
+// ====================== ALIGN_UP_POW2 explained =========================== //
+// Scenario A: arena->pos is already aligned (e.g., pos = 16)
+// p - 1: 8 - 1 = 7 (00000111)
+// n + (p - 1): 16 + 7 = 23 (00010111)
+// ~ (p - 1): ~7 creates the bitmask ...11111000
+// Final AND: 23 & ~7 -> 00010111 & 11111000 = 16
+// Result: It stays 16
+// =========================================================================
+// Scenario B: arena->pos is unaligned (e.g., pos = 17)
+// p - 1: 8 - 1 = 7 (00000111)
+// n + (p - 1): 17 + 7 = 24 (00011000)/
+// ~ (p - 1): ~7 creates the bitmask ...11111000
+// Final AND: 24 & ~7 $\rightarrow$ 00011000 & 11111000 = 24
+// Result: It bumps 17 up to 24 so that the next allocation starts cleanly on an 8-byte boundary.
+// ====================== ALIGN_UP_POW2 explained =========================== //
 void *arena_push(mem_arena *arena, u64 size, b32 non_zero){
     u64 pos_aligned = ALIGN_UP_POW2(arena->pos, ARENA_ALIGN);
     u64 new_pos = pos_aligned + size;
